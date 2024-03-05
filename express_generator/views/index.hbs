@@ -1,3 +1,18 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
-<h3>{{name}}</h3>
+{{#each values}}
+  <h1>{{@index}}. {{this}}</h1>
+{{/each}}
+
+<p>{{person.comments.comment}}</p>
+
+{{#with person}}
+  <h4>{{comments.date}}</h4>
+  {{#with comments}}
+    <h6>{{date}}</h6>
+  {{/with}}
+{{/with}}
+
+{{#if user.admin}}
+  <p>This is an admin</p>
+{{else}}
+  <p>This is a normal user</p>
+{{/if}}
